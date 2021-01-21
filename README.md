@@ -34,6 +34,7 @@
       <ul>
         <li><a href="#step-1-initial-setup">Step 1 : Initial Setup</a></li>
         <li><a href="#step-2-adding-apps-and-defining-models">Step 2 : Adding apps and defining models</a></li>
+        <li><a href="#step-3-managing-django-admin">Step 3 : Managing Django Admin</a></li>
       </ul>
     </li>
     <li><a href="#acknowledgements-and-references">Acknowledgements and References</a></li>
@@ -94,8 +95,8 @@ Homework: Change the settings file to use postgres instead of sqlite.
     python manage.py startapp interactions 
    ```
 2. Create `urls.py` in customer and interactions apps 
-3. Add the `urls.py` in the website url routing files
-4. Register the apps in the websites `setttings.py` file 
+3. Add the `urls.py` in the website's `url.py` routing files
+4. Register the apps in the website's `setttings.py` file 
 5. Define the models in the respective `models.py` files of the apps 
 6. Make migrations and migrate the models
 7. Notes 
@@ -105,6 +106,35 @@ Homework: Change the settings file to use postgres instead of sqlite.
     * Reference for different fields types [Official Model Documentation](https://docs.djangoproject.com/en/3.0/topics/db/models/)
 
 
+<!-- STEP 3 -->
+### Step 3 Managing Django Admin
+
+1. Django bulk import-export functionality 
+    ```sh
+    pip install django-import-export
+    # In settings.py
+    #   Add import_export in installed apps in settings.py
+    #   STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+    #   IMPORT_EXPORT_USE_TRANSACTIONS = True
+    python manage.py collectstatic
+   ```
+2. Register the models to be used in `admin.py` files in the respective apps 
+    * Look at the sample files to see how to customize list and detail view for various models
+3. Basic admin configurations 
+    * Change header using `admin.site.site_header` in any of the admin file
+4. Notes 
+    * [Reference for Import-Export](https://django-import-export.readthedocs.io/en/latest/installation.html)
+    * Extend ModelAdmin in admin.py [Link](https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#modeladmin-options)
+    * DjangoAdmin Cookbook [Link](https://books.agiliq.com/projects/django-admin-cookbook/en/latest/)
+    * Sometimes you might want to register a model to multiple ModelAdmin (e.g. Leaflet and ImportExportModelAdmin), in this case use proxy models 
+    * Technically you can have multiple ModelAdmin for the same model
+    * Ability to create inline forms in admin
+    * Filters 
+        * Django advanced filters for admin 
+        * You can add multiple search fields in listview. Also you can add Foreign Key as __ to search
+        * Ading autocomplete in django admin filters : https://medium.com/cashify-engineering/autocomplete-list-filter-in-django-admin-2a88ead52246 
+    * You can create multiple admins for the same website :- e.g. basic-admin and advanced-admin
+    * Have more hyperlinks to ForeignKey fields from the listView [Link](https://avilpage.com/2017/11/django-tips-tricks-hyperlink-foreignkey-admin.html)
 
 
 

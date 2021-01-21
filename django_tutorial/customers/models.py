@@ -6,6 +6,11 @@ class CustomerTags(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "1. Customer Tags" 
+        verbose_name = "Customer Tag"
+        ordering = ('name',)
+
 class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
@@ -26,6 +31,6 @@ class Customer(models.Model):
         return f'{self.name} ({self.email})'
 
     class Meta:
-        verbose_name_plural = "Customers" 
+        verbose_name_plural = "2. Customers" 
         verbose_name = "Customer"
         ordering = ('name',)

@@ -27,7 +27,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#tutorial-steps">Tutorial Steps</a>
@@ -96,7 +96,6 @@ Homework: Change the settings file to use postgres instead of sqlite.
 ## Contact
 
 Abhinav Jain - abhinav@regisedge.com
-
 Project Link: [https://github.com/Regisedge-Solutions/django-tutorial](https://github.com/Regisedge-Solutions/django-tutorial)
 
 

@@ -35,6 +35,8 @@
         <li><a href="#step-1-initial-setup">Step 1 : Initial Setup</a></li>
         <li><a href="#step-2-adding-apps-and-defining-models">Step 2 : Adding apps and defining models</a></li>
         <li><a href="#step-3-managing-django-admin">Step 3 : Managing Django Admin</a></li>
+        <li><a href="#step-4-rest-apis">Step 4 : REST APIs and Authentication</a></li>
+        <li><a href="#step-5-views-and-templates">Step 5 : Views and Templates</a></li>
       </ul>
     </li>
     <li><a href="#acknowledgements-and-references">Acknowledgements and References</a></li>
@@ -102,9 +104,14 @@ Homework: Change the settings file to use postgres instead of sqlite.
 7. Notes 
     * Always use singular while creating models
     * While creating relationships, only add to one of the models - ManytoMany (any of the two) or ForeignKey (the one which contains)
-    * Generally a good practice to extend the user model [Extending Link](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
-    * Reference for different fields types [Official Model Documentation](https://docs.djangoproject.com/en/3.0/topics/db/models/)
-
+    * Generally a good practice to extend the user model [Link](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
+    * Reference for different fields types [Official Documentation](https://docs.djangoproject.com/en/3.0/topics/db/models/)
+8. Generating DOT and PNG files for the data model 
+   ```sh
+    pip install django-extensions, pygraphviz, pydot, pyparsing
+    python manage.py graph_models -a > erd.dot 
+    python manage.py graph_models --pydot -a -g -o erd.png 
+   ```
 
 <!-- STEP 3 -->
 ### Step 3 Managing Django Admin
@@ -119,30 +126,65 @@ Homework: Change the settings file to use postgres instead of sqlite.
     python manage.py collectstatic
    ```
 2. Register the models to be used in `admin.py` files in the respective apps 
-    * Look at the sample files to see how to customize list and detail view for various models
+    * Look at the sample files `customers/admin.py` and `interactions/admin.py` to see how to customize listViews and detailsViews for various models
 3. Basic admin configurations 
     * Change header using `admin.site.site_header` in any of the admin file
 4. Notes 
-    * [Reference for Import-Export](https://django-import-export.readthedocs.io/en/latest/installation.html)
+    * Reference for Import-Export [Link](https://django-import-export.readthedocs.io/en/latest/installation.html)
     * Extend ModelAdmin in admin.py [Link](https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#modeladmin-options)
     * DjangoAdmin Cookbook [Link](https://books.agiliq.com/projects/django-admin-cookbook/en/latest/)
     * Sometimes you might want to register a model to multiple ModelAdmin (e.g. Leaflet and ImportExportModelAdmin), in this case use proxy models 
     * Technically you can have multiple ModelAdmin for the same model
-    * Ability to create inline forms in admin
     * Filters 
         * Django advanced filters for admin 
         * You can add multiple search fields in listview. Also you can add Foreign Key as __ to search
-        * Ading autocomplete in django admin filters : https://medium.com/cashify-engineering/autocomplete-list-filter-in-django-admin-2a88ead52246 
+        * Adding autocomplete in django admin filters : [Link](https://medium.com/cashify-engineering/autocomplete-list-filter-in-django-admin-2a88ead52246)
     * You can create multiple admins for the same website :- e.g. basic-admin and advanced-admin
     * Have more hyperlinks to ForeignKey fields from the listView [Link](https://avilpage.com/2017/11/django-tips-tricks-hyperlink-foreignkey-admin.html)
+    * Add Admin Actions and Inline Forms 
 
 
+<!-- STEP 4 -->
+### Step 4 REST APIs
+
+1. Django Rest Framework 
+    ```sh
+    pip install djangorestframework
+    # In settings.py
+    #   Add import_export in installed apps in settings.py
+    #   Add settings block for Django Rest Framework 
+    pip freeze > requirements.txt 
+   ```
+2. Add `serializers.py` to the different apps
+3. Add `viewsets.py` to the different apps 
+4. Make changes to the `urls.py` file in the individual apps 
+5. Include the individual `urls.py` to the website's `urls.py`
+6. Notes 
+    * Reference for Django Rest Framework [Link](https://www.django-rest-framework.org/tutorial/quickstart)
+    * Homework : Try to change the routing so that the REST apis are available at apis/ and other routing remains as earlier. 
+
+
+<!-- STEP 5 -->
+### Step 5 Views and Templates
+(For some other day!)
 
 <!-- REFERENCES -->
 ## Acknowledgements and References
 
 * [README template](https://github.com/othneildrew/Best-README-Template)
 * [Official Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial01/)
+    * Look at individual documentation of classes to understand what metadata and functions can be overriden.
+    * Django Admin and Related Classes [Link](https://docs.djangoproject.com/en/3.1/ref/contrib/admin/)
+        * ModelAdmin, InlineModelAdmin, AdminSite, LogEntry, 
+    * Django Model and Related Classes [Link](https://docs.djangoproject.com/en/3.1/ref/models/instances/#django.db.models.Model)
+        * Model, ModelForm
+* Managing inline saves [Link](https://gist.github.com/shymonk/5d4467bbc7d08dd7f6f4)
+* Further additions 
+    * Class Based Views, Mixins, Generic Views
+* Reference files 
+    * model-references.py (save functions)
+    * admin-references.py (proxy models, inlines), modelforms, serializers etc 
+    * query-references.py (sample queries)
 
 <!-- CONTACT -->
 ## Contact

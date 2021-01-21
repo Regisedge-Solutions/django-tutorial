@@ -15,6 +15,19 @@ pip install --upgrade pip
 pip install django
 ```
 
+Check the django-admin version and start the project 
+
+```
+django-admin --version
+django-admin startproject myproject
+```
+
+Make changes to settings.py file so that timezone is correctly set 
+```
+    TIME_ZONE = 'Asia/Kolkata'
+```
+
+
 Notes and References
 --------------------------------------------
 

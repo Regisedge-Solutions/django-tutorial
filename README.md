@@ -33,6 +33,7 @@
       <a href="#tutorial-steps">Tutorial Steps</a>
       <ul>
         <li><a href="#step-1-initial-setup">Step 1 : Initial Setup</a></li>
+        <li><a href="#step-2-adding-apps-and-defining-models">Step 2 : Adding apps and defining models</a></li>
       </ul>
     </li>
     <li><a href="#acknowledgements-and-references">Acknowledgements and References</a></li>
@@ -77,12 +78,32 @@
     python manage.py createsuperuser 
 
     # Run a local server to test 
-    python manage.py  
+    python manage.py runserver
    ```    
 
 You should have the django project up and running. Try loggind into the backend admin too. 
 
 Homework: Change the settings file to use postgres instead of sqlite.
+
+<!-- STEP 2 -->
+### Step 2 Adding apps and defining models
+
+1. Create the customer and interaction models 
+   ```sh
+    python manage.py startapp customers
+    python manage.py startapp interactions 
+   ```
+2. Create `urls.py` in customer and interactions apps 
+3. Add the `urls.py` in the website url routing files
+4. Register the apps in the websites `setttings.py` file 
+5. Define the models in the respective `models.py` files of the apps 
+6. Make migrations and migrate the models
+7. Notes 
+    * Always use singular while creating models
+    * While creating relationships, only add to one of the models - ManytoMany (any of the two) or ForeignKey (the one which contains)
+    * Generally a good practice to extend the user model [Extending Link](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
+    * Reference for different fields types [Official Model Documentation](https://docs.djangoproject.com/en/3.0/topics/db/models/)
+
 
 
 
@@ -91,11 +112,13 @@ Homework: Change the settings file to use postgres instead of sqlite.
 ## Acknowledgements and References
 
 * [README template](https://github.com/othneildrew/Best-README-Template)
+* [Official Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial01/)
 
 <!-- CONTACT -->
 ## Contact
 
 Abhinav Jain - abhinav@regisedge.com
+
 Project Link: [https://github.com/Regisedge-Solutions/django-tutorial](https://github.com/Regisedge-Solutions/django-tutorial)
 
 

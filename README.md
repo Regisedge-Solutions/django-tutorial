@@ -32,7 +32,7 @@
     <li>
       <a href="#tutorial-steps">Tutorial Steps</a>
       <ul>
-        <li><a href="#step-1-:-initial-setup">Step 1 : Initial Setup</a></li>
+        <li><a href="#step-1-initial-setup">Step 1 : Initial Setup</a></li>
       </ul>
     </li>
     <li><a href="#acknowledgements-and-references">Acknowledgements and References</a></li>
@@ -45,7 +45,7 @@
 ## Tutorial steps 
 
 <!-- STEP 1 -->
-### Step 1 : Initial Setup
+### Step 1 Initial Setup
 
 1. Create a virtual environment 
    ```sh

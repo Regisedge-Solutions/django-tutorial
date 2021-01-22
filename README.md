@@ -104,6 +104,7 @@ Homework: Change the settings file to use postgres instead of sqlite.
 7. Notes 
     * Always use singular while creating models
     * While creating relationships, only add to one of the models - ManytoMany (any of the two) or ForeignKey (the one which contains)
+    * Many to Many relationships - Use the through parameter while defining the relationship. 
     * Generally a good practice to extend the user model [Link](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
     * Reference for different fields types [Official Documentation](https://docs.djangoproject.com/en/3.0/topics/db/models/)
 8. Generating DOT and PNG files for the data model 

@@ -1,17 +1,29 @@
+from django.db import models
 
 class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     email = models.EmailField()
-    date_created = models.DateTimeField(auto_now_add=True)
+    description = models.TextField(max_length=200, null=True, blank=True)
+    featured = models.BooleanField(default=False)
+
+    created_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_on = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    tags = models.ManyToManyField(CustomerTags)
 
     def __str__(self):
-        return self.name
-    
+        return f'{self.name} ({self.email})' or ''
+
     # Abhinav : properties can be created for small functions. decorators 
     @property
     def display_name(self):
         return f'{self.name} ({self.email})'
+
+    class Meta:
+        verbose_name_plural = "2. Customers" 
+        verbose_name = "Customer"
+        ordering = ('name',)
 
 
 class Tag(models.Model):
@@ -54,10 +66,6 @@ class Order(models.Model):
     status = models.CharField('Status',max_length=200, null=True, choices = STATUS)
 
 
-
-
-
-
 class Customer(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -86,7 +94,6 @@ class PurchaseItem(models.Model):
     product = models.ForeignKey('products.Product')
     purchase = models.ForeignKey(Purchase)
     quantity = models.IntegerField(default=1)
-
 
 
 class Product(models.Model):
@@ -136,15 +143,6 @@ class Category(models.Model):
         return self.name
 
 
-
-from django.db import models
-
-# Abhinav : Note whenever creating a tag always create singular 
-# https://docs.djangoproject.com/en/3.0/ref/models/fields/#model-field-types
-# https://docs.djangoproject.com/en/3.0/topics/db/models/
-# Good note on when to use Many to Many relationships and relationships through
-
-# Create your models here.
 class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)

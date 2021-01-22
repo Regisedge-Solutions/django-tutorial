@@ -1,3 +1,6 @@
+# Inline forms - might have to use save_related here
+
+
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from import_export.admin import ImportExportActionModelAdmin
@@ -13,6 +16,7 @@ class CustomerAdmin(ImportExportModelAdmin):
 
     # DetailView options
     autocomplete_fields = ['tags']
+    # filter_horizontal = ['village_pratinidhi','promoters']
     prepopulated_fields = {'slug': ('name',),}
     fieldsets = (
         (None, {

@@ -186,6 +186,8 @@ Homework: Change the settings file to use postgres instead of sqlite.
     * model-references.py (save functions)
     * admin-references.py (proxy models, inlines), modelforms, serializers etc 
     * query-references.py (sample queries)
+    * viewport-references.py - todo
+    * urls-references.py - todo 
 
 <!-- CONTACT -->
 ## Contact

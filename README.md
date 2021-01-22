@@ -162,7 +162,7 @@ Homework: Change the settings file to use postgres instead of sqlite.
 5. Include the individual `urls.py` to the website's `urls.py`
 6. Notes 
     * Reference for Django Rest Framework [Link](https://www.django-rest-framework.org/tutorial/quickstart)
-    * Homework : Try to change the routing so that the REST apis are available at apis/ and other routing remains as earlier. 
+    * Homework : Try to change the routing so that the REST apis are available at `apis/` and other routing remains as earlier. The current method of implementation does not list all the API end point. One way could be to import the individual viewports in the website `urls.py` and add default router only in that file. 
 
 
 <!-- STEP 5 -->

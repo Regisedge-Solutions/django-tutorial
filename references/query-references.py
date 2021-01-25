@@ -1,3 +1,6 @@
+# Reference : https://docs.djangoproject.com/en/3.1/topics/db/queries/
+
+
 # #***(1)Returns all customers from customer table
 # customers = Customer.objects.all()
 
@@ -65,3 +68,6 @@
 # parent = ParentModel.objects.first()
 # #Returns all child models related to parent
 # parent.childmodel_set.all()
+
+
+# Question.objects.get(pub_date__year=current_year)

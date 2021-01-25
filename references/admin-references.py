@@ -27,7 +27,7 @@ class CustomerAdmin(ImportExportModelAdmin):
             )
         }),
         ('Description', {
-            'classes': ('collapse closed',), # Changed because of grapelli. Earlier 'collapse'
+            'classes': ('collapse closed',), 
             'fields' : (
                 'description',
             )

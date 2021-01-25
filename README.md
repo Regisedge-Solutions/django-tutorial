@@ -36,7 +36,8 @@
         <li><a href="#step-2-adding-apps-and-defining-models">Step 2 : Adding apps and defining models</a></li>
         <li><a href="#step-3-managing-django-admin">Step 3 : Managing Django Admin</a></li>
         <li><a href="#step-4-rest-apis">Step 4 : REST APIs and Authentication</a></li>
-        <li><a href="#step-5-views-and-templates">Step 5 : Views and Templates</a></li>
+        <li><a href="#step-5-views-and-templates">Step 5 : Views and Templates (todo)</a></li>
+        <li><a href="#step-6-django-forms">Step 6 : Django Forms (todo)</a></li>
       </ul>
     </li>
     <li><a href="#acknowledgements-and-references">Acknowledgements and References</a></li>
@@ -143,6 +144,7 @@ Homework: Change the settings file to use postgres instead of sqlite.
     * You can create multiple admins for the same website :- e.g. basic-admin and advanced-admin
     * Have more hyperlinks to ForeignKey fields from the listView [Link](https://avilpage.com/2017/11/django-tips-tricks-hyperlink-foreignkey-admin.html)
     * Add Admin Actions and Inline Forms 
+    * Inlines can be StackedInline or TabularInline 
 
 
 <!-- STEP 4 -->
@@ -168,6 +170,19 @@ Homework: Change the settings file to use postgres instead of sqlite.
 <!-- STEP 5 -->
 ### Step 5 Views and Templates
 (For some other day!)
+<!-- Add about URL conf, Function based generic views and Class based generic views -->
+
+<!-- STEP 6 -->
+### Step 6 Django Forms
+(For some other day!)
+
+<!-- 
+a) Override save function on a model. 
+b) Add custom validations on fields. 
+-->
+
+<!--https://www.geeksforgeeks.org/custom-field-validations-in-django-models/ -->
+
 
 <!-- REFERENCES -->
 ## Acknowledgements and References

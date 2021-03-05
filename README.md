@@ -195,6 +195,7 @@ b) Add custom validations on fields.
     * Django Model and Related Classes [Link](https://docs.djangoproject.com/en/3.1/ref/models/instances/#django.db.models.Model)
         * Model, ModelForm
 * Managing inline saves [Link](https://gist.github.com/shymonk/5d4467bbc7d08dd7f6f4)
+* Django Best Practices [Link](https://data-flair.training/blogs/django-tutorial/)
 * Further additions 
     * Class Based Views, Mixins, Generic Views
 * Reference files 
